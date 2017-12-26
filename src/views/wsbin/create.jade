@@ -1,0 +1,24 @@
+extends ../layout.jade
+
+block content
+  div(data-page="wsbin/create").container
+    div.panel.panel-default
+      div.panel-heading: h4 Bin Builder
+      div.panel-body
+        div.row
+          form.form-horizontal(name='content')
+            h4 Body
+
+            div.form-group
+              div.col-sm-12: textarea(rows=5, name='text', value='', placeholder='body content').form-control
+
+
+      div.panel-footer
+        div.row
+          div.col-sm-2
+            form(method="POST", action="/wsbin/create")
+              input(type='hidden', name='response', value='')
+              button(type='submit').btn.btn-primary.btn-block Create WS-Bin
+
+block scripts
+  script(type='text/javascript', src='/static/wsbin/create.js')
